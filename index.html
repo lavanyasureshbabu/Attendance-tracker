@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titans | Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">TEAM TITANS</p>
+      <h1>Attendance Tracker</h1>
+      <p class="subtitle">A simple way to record and review class attendance.</p>
+    </div>
+    <span class="badge">Prototype</span>
+  </header>
+
+  <main class="container">
+    <section class="summary">
+      <article class="summary-card"><span>Total students</span><strong id="totalCount">0</strong></article>
+      <article class="summary-card"><span>Present</span><strong id="presentCount">0</strong></article>
+      <article class="summary-card"><span>Absent</span><strong id="absentCount">0</strong></article>
+      <article class="summary-card"><span>Present rate</span><strong id="presentRate">0%</strong></article>
+    </section>
+
+    <section class="panel controls">
+      <div class="field">
+        <label for="className">Class / Section</label>
+        <input id="className" value="CSE - Year 2" aria-label="Class or section">
+      </div>
+      <div class="field">
+        <label for="attendanceDate">Attendance date</label>
+        <input id="attendanceDate" type="date" aria-label="Attendance date">
+      </div>
+      <div class="field search-field">
+        <label for="searchInput">Search student</label>
+        <input id="searchInput" placeholder="Enter a name or roll number">
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Student attendance</h2>
+          <p>Choose Present or Absent for each student.</p>
+        </div>
+        <button class="secondary" id="markAllPresent">Mark all present</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Roll No.</th><th>Student name</th><th>Status</th></tr></thead>
+          <tbody id="studentRows"></tbody>
+        </table>
+      </div>
+      <div class="actions">
+        <button id="saveButton">Save attendance</button>
+        <button class="secondary" id="recordsButton">View saved records</button>
+        <button class="secondary" id="clearButton">Clear selections</button>
+      </div>
+      <p id="message" class="message" role="status"></p>
+    </section>
+
+    <section class="panel" id="recordsPanel">
+      <div class="panel-heading">
+        <div>
+          <h2>Saved records</h2>
+          <p>Records are stored in this browser on this device.</p>
+        </div>
+      </div>
+      <div id="recordsList" class="records-list"><p class="empty">No saved records yet.</p></div>
+    </section>
+    <p class="note">Student names are sample data for demonstration. This prototype does not use a server or database.</p>
+  </main>
+  <footer>Built by Team Titans · Attendance Tracker</footer>
+  <script src="script.js"></script>
+</body>
+</html>
